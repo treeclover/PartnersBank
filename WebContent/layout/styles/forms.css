@@ -1,0 +1,38 @@
+@charset "utf-8";
+/*
+Template Name: WorkAholic
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+File: Forms CSS
+*/
+
+form, fieldset, legend{margin:0; padding:0; border:none;}
+legend{display:none;}
+input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Times,serif;}
+
+/* ----------------------------------------------Search Form------------------------------------- */
+
+#topbar form{float:right; margin:0; padding:0;}
+#topbar form input{display:block; float:left; width:200px; margin:0; padding:8px; color:#7F7D77; background-color:#FFFFFF; border:1px solid #DDDDDD;}
+#topbar form #sf_submit{width:auto; padding:7px; font-weight:bold; text-transform:uppercase; color:#FFFFFF; background-color:#2BBEDD; border-color:#2BBEDD; cursor:pointer;}
+
+/* ----------------------------------------------Forms in Comment Area------------------------------------- */
+
+#comments form{display:block; width:100%;}
+#comments form input{width:170px; padding:2px; border:1px solid #CCCCCC; margin:5px 5px 0 0;}
+#comments form textarea{width:98%; border:1px solid #CCCCCC; padding:2px; overflow:auto;}
+#comments form p{margin:5px 0;}
+#comments form #submit, #comments form #reset{margin:0; padding:5px; color:#666666; background-color:#F7F7F7; cursor:pointer;}
+
+/* ----------------------------------------------Contact Form in Footer------------------------------------ */
+
+#footer label{display:none;}
+#footer input{display:inline-block; width:176px; margin:0; padding:8px; color:#989898; background-color:#F6F6F6; border:1px solid #D1D1D1;}
+#footer input#nl_submit{width:auto; margin-left:5px; color:#2BBEDD; background-color:#F6F6F6; text-transform:uppercase; font-weight:bold; cursor:pointer;}
+
+/* CSS3 Elements */
+
+#comments input, #comments textarea, #comments button, #footer input, #footer textarea, #footer button{border-radius:5px;}
+input, textarea, select{resize:none; outline:none;}

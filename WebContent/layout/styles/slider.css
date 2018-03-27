@@ -1,0 +1,59 @@
+@charset "utf-8";
+/*
+Template Name: WorkAholic
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+File: Slider CSS
+*/
+
+.flex-container a:active, .flexslider a:active, .flex-container a:focus, .flexslider a:focus{outline:none;}
+.slides, .flex-control-nav, .flex-direction-nav{margin:0; padding:0; list-style:none;}
+.flexslider{position:relative; margin:0; padding:0;}
+.flexslider .slides > li{display:none; -webkit-backface-visibility:hidden;}
+.flexslider .slides img{display:block; width:100%;}
+.slides::after{content:"."; display:block; clear:both; visibility:hidden; line-height:0; height:0;}
+html[xmlns] .slides{display:block;}
+* html .slides{height:1%;}
+.flex-viewport{max-height:2000px; -webkit-transition:all 1s ease; -moz-transition:all 1s ease; transition:all 1s ease;}
+.loading .flex-viewport{max-height:300px;}
+
+#slider{position:relative; display:block; width:100%; height:600px; overflow:hidden;}
+#slider ul.slides{margin:0; padding:0; list-style:none; border:none;}
+#slider ul.slides li{text-transform:uppercase; position:relative;}
+#slider ul.slides li img{}
+#slider ul.slides li div{display:block; position:absolute; bottom:140px; left:30px; margin:0; padding:0;}
+#slider ul.slides li div h2{margin:0 0 30px 0; font-size:36px; line-height:32px;}
+#slider ul.slides li div p{margin:0; font-size:18px;}
+#slider ul.slides li div h2, #slider ul.slides li div p{display:inline-block; padding:8px 10px; color:#FFFFFF; background-color:hsla(0,0%,0%,0.7);}
+#slider ol{position:absolute; display:inline-block; top:20px; width:100%; margin:0; padding:0; text-align:center; z-index:10;}
+#slider ol li{display:inline-block; margin:0; padding:0;}
+#slider ol li a{display:inline-block; width:16px; height:0; margin:0 5px; padding:16px 0 0 0; background:url("images/sliderpagination.png") 0 0 no-repeat; overflow:hidden; cursor:pointer;}
+#slider ol li a:hover, #slider ol li a.flex-active{background-position:0 -16px;}
+#slider ul.flex-direction-nav{}
+#slider ul.flex-direction-nav li a{position:absolute; display:block; top:10%; width:52px; height:52px; background:url("images/prev_next.png") 0 0 no-repeat; cursor:pointer; text-indent:-9999px; z-index:10;}
+#slider ul.flex-direction-nav li a.flex-prev{background-position:0 100%; left:30px;}
+#slider ul.flex-direction-nav li a.flex-next{right:30px;}
+
+#services{position:relative; margin:-145px 0 50px 0; padding:40px 0 50px 0; background:url("images/splitter.gif") bottom center no-repeat #FFFFFF; border-top:5px solid #2BBEDD;}
+#services h1{display:block; width:100%; margin:0 0 45px 0; padding:0; text-align:center; color:#1F1F1F; background-color:#FFFFFF; font-size:46px; line-height:42px;}
+#services ul{margin:0 0 20px 0; padding:0; list-style:none; overflow:hidden;}
+#services ul li{display:block; float:left; padding-top:25px; border-top:1px solid #D7D7D7; text-align:center;}
+#services ul li:hover{border-color:#2BBEDD;}
+#services ul li article{}
+#services ul li img, #services ul li h2{margin:0 0 20px 0;}
+#services ul li h2{font-size:20px;}
+#services ul li p{margin:0; padding:0;}
+
+#services .carousel .flex-slides li{width:210px; margin-right:20px;}
+#services .carousel li:last-child{margin-right:0;}
+#services .carousel.flex-carousel{position:relative; text-align:center;}
+#services .carousel.flex-carousel .flex-direction-nav{margin:0;}
+#services .carousel.flex-carousel .flex-direction-nav li{display:inline-block; float:none; width:24px; height:24px; margin:0; padding:0; border:none;}
+#services .carousel.flex-carousel .flex-direction-nav li:first-child{margin-right:5px;}
+#services .carousel.flex-carousel .flex-direction-nav li:last-child{}
+#services .carousel.flex-carousel .flex-direction-nav li em{display:none;}
+#services .carousel.flex-carousel .flex-direction-nav a{display:block; width:100%; height:100%; background:top left no-repeat; border:none; text-align:center;}
+#services .carousel.flex-carousel .flex-direction-nav a.flex-prev{background-image:url("images/prev.gif");}
+#services .carousel.flex-carousel .flex-direction-nav a.flex-next{background-image:url("images/next.gif");}

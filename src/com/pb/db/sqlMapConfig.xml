@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="com/pb/db/db.properties" />
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}"/>
+				<property name="url" value="${url}"/>
+				<property name="username" value="${username}"/>
+				<property name="password" value="${password}"/>
+				<property name="poolTimeToWait" value="${poolTimeToWait}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="com/pb/admin/admin.xml"/>
+		<mapper resource="com/pb/cclient/cclient.xml"/>
+		<mapper resource="com/pb/chatbot/chatbot.xml"/>
+		<mapper resource="com/pb/pclient/pclient.xml"/>
+		<mapper resource="com/pb/recommand/recommand.xml"/>
+	</mappers>
+</configuration>

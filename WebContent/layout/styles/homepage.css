@@ -1,0 +1,24 @@
+@charset "utf-8";
+/*
+Template Name: WorkAholic
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+File: Homepage CSS
+*/
+
+#info{}
+#container #info section{margin-bottom:0;}
+#info ul{margin:0; padding:0; list-style:none;}
+#info ul li{margin-top:40px;}
+#info ul li:first-child{margin-top:0;}
+#info ul li p.name{margin:0; padding:15px 0 15px 60px; background:url("images/blockquote.gif") 0 0 no-repeat;}
+#info ul li blockquote{display:block; margin:0; padding:0; font-style:normal; line-height:inherit;}
+#info ul li blockquote::before, #info ul li blockquote::after{content:'';}
+#info ul li figure{}
+#info ul li figure img{float:left; padding:4px; border:1px solid #D7D7D7;}
+#info ul li figure figcaption{display:block; float:right; width:400px;}
+#info ul li figure figcaption h2{margin-bottom:0; font-size:16px; font-weight:bold;}
+#info ul li figure figcaption p{}
+#info ul li figure figcaption footer{text-align:right;}
