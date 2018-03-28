@@ -14,9 +14,9 @@ input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Ti
 
 /* ----------------------------------------------Search Form------------------------------------- */
 
-#topbar form{float:right; margin:0; padding:0;}
-#topbar form input{display:block; float:left; width:200px; margin:0; padding:8px; color:#7F7D77; background-color:#FFFFFF; border:1px solid #DDDDDD;}
-#topbar form #sf_submit{width:auto; padding:7px; font-weight:bold; text-transform:uppercase; color:#FFFFFF; background-color:#2BBEDD; border-color:#2BBEDD; cursor:pointer;}
+#topbar form{float:right; margin:6px; padding:0;}
+#topbar form input{display:block; float:left; width:100px; height:20px; margin:0; padding:3px; color:#a4a4a4; background-color:#FFFFFF; border:1px solid #DDDDDD;}
+#topbar form #sf_submit{width:auto;   color:#FFFFFF; background-color:#2BBEDD; border-color:#2BBEDD; cursor:pointer;}
 
 /* ----------------------------------------------Forms in Comment Area------------------------------------- */
 

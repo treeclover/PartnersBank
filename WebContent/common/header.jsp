@@ -19,8 +19,8 @@
     <form action="#" method="post">
       <fieldset>
         <legend>Search:</legend>
-        <input type="text" value="Search Our Website&hellip;" placeholder="Search Our Website&hellip;">
-        <input type="submit" id="sf_submit" value="submit">
+        <input type="text" placeholder="검색어 입력">
+        <input type="submit" id="sf_submit" value="검색">
       </fieldset>
     </form>
     <ul>
@@ -38,7 +38,7 @@
     </div>
     <nav>
       <ul class="clear">
-        <li><a href="index.jsp">개인</a><span>Test Text Here</span>
+        <li><a href="${path}/index.jsp">개인</a><span>Test Text Here</span>
           <ul>
             <li><a href="#">조회</a></li>
             <li><a href="#">이체</a></li>
@@ -63,7 +63,7 @@
             <li><a href="#">기업</a></li>
           </ul>
         </li>
-        <li><a href="pages/gallery.html">가계부</a><span>Test Text Here</span>
+        <li><a href="${path}/householdledger/hmain.jsp">가계부</a><span>Test Text Here</span>
         </li>
         
       </ul>

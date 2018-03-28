@@ -17,21 +17,21 @@
 <div class="wrapper row2">
   <section id="slider" class="flexslider clear">
     <ul class="slides">
-      <li><img src="images/demo/slider/1.gif" alt="">
+      <li><img src="images/demo/slider/bank.jpg" width="960px" height="600px">
         <div class="flex-caption">
           <h2>Partners Bank</h2>
           <p>Nunc non diam erat in fringilla massa ut nisi ullamcorper pellentesque.</p>
         </div>
       </li>
-      <li><img src="images/demo/slider/1.gif" alt="">
+      <li><img src="images/demo/slider/bank.jpg" width="960px" height="600px">
         <div class="flex-caption">
-          <h2>Lorem ipsum dolor 2</h2>
+          <h2>Partners Bank</h2>
           <p>Nunc non diam erat in fringilla massa ut nisi ullamcorper pellentesque.</p>
         </div>
       </li>
-      <li><img src="images/demo/slider/1.gif" alt="">
+      <li><img src="images/demo/slider/bank.jpg" width="960px" height="600px">
         <div class="flex-caption">
-          <h2>Lorem ipsum dolor 3</h2>
+          <h2>Partners Bank</h2>
           <p>Nunc non diam erat in fringilla massa ut nisi ullamcorper pellentesque.</p>
         </div>
       </li>
