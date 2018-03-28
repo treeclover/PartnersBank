@@ -19,7 +19,7 @@
     <ul class="slides">
       <li><img src="images/demo/slider/1.gif" alt="">
         <div class="flex-caption">
-          <h2>Lorem ipsum dolor 1</h2>
+          <h2>Partners Bank</h2>
           <p>Nunc non diam erat in fringilla massa ut nisi ullamcorper pellentesque.</p>
         </div>
       </li>
