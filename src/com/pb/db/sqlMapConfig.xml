@@ -19,9 +19,8 @@
 	
 	<mappers>
 		<mapper resource="com/pb/admin/admin.xml"/>
-		<mapper resource="com/pb/cclient/cclient.xml"/>
+		<mapper resource="com/pb/client/client.xml"/>
 		<mapper resource="com/pb/chatbot/chatbot.xml"/>
-		<mapper resource="com/pb/pclient/pclient.xml"/>
 		<mapper resource="com/pb/recommand/recommand.xml"/>
 	</mappers>
 </configuration>

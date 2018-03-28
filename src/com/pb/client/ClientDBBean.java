@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 import com.pb.db.SqlMapClient;
 
-@Component("PclientDao")
+@Component("clientDao")
 public class ClientDBBean implements ClientDao{
 	@Override
 	public List<BankAccountDto> accountList(BankAccountDto bankaccountDto) {

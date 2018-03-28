@@ -19,7 +19,7 @@ import com.pb.client.TradeLogDto;
 public class ClientHandler{
 	
 	@Resource
-	private ClientDao pclientDao;
+	private ClientDao clientDao;
 	
 	
 	private ClientDto clientDto;
@@ -31,15 +31,15 @@ public class ClientHandler{
 	
 	@RequestMapping("/inquireTotal")
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		List<BankAccountDto> accountList = pclientDao.accountList(bankAccountDto);
+		List<BankAccountDto> accountList = clientDao.accountList(bankAccountDto);
 		request.setAttribute("accountList", accountList);
-		return new ModelAndView("pclient/inquireTotal");
+		return new ModelAndView("client/inquireTotal");
 	}
 
 	@RequestMapping("/deposit")
 	public ModelAndView viewBm(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
-		return new ModelAndView("pclient/deposit");
+		return new ModelAndView("client/deposit");
 	}
 	
 	

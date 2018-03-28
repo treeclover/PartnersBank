@@ -17,14 +17,12 @@
 	
 	<context:component-scan base-package="com.pb.handler" />
 	<context:component-scan base-package="com.pb.admin" />
-	<context:component-scan base-package="com.pb.cclient" />
-	<context:component-scan base-package="com.pb.pclient" />
+	<context:component-scan base-package="com.pb.client" />
 	<context:component-scan base-package="com.pb.chatbot" />
 	<context:component-scan base-package="com.pb.recommand" />
 	<context:component-scan base-package="com.pb.db" />
 	<context:component-scan base-package="com.pb.handler.admin" />
-	<context:component-scan base-package="com.pb.handler.cclient" />
-	<context:component-scan base-package="com.pb.handler.pclient" />
+	<context:component-scan base-package="com.pb.handler.client" />
 	<context:component-scan base-package="com.pb.handler.chatbot" />
 	<context:component-scan base-package="com.pb.handler.recommand" />
 
