@@ -3,6 +3,7 @@ package com.pb.client;
 public class CardDto {
 	private String card_number;
 	private String account_number;
+	private String card_name;
 	private String type;
 	private double telecom;
 	private double public_transport;
@@ -24,6 +25,12 @@ public class CardDto {
 	}
 	public void setAccount_number(String account_number) {
 		this.account_number = account_number;
+	}
+	public String getCard_name() {
+		return card_name;
+	}
+	public void setCard_name(String card_name) {
+		this.card_name = card_name;
 	}
 	public String getType() {
 		return type;

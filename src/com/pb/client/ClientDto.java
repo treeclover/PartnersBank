@@ -8,6 +8,21 @@ public class ClientDto {
 	private String addr;
 	private String phone;
 	private String email;
+	private String job;
+	private String gender;
+	
+	public String getJob() {
+		return job;
+	}
+	public void setJob(String job) {
+		this.job = job;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 	public String getType() {
 		return type;
 	}

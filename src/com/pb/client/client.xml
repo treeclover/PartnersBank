@@ -3,7 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Personal">
-	<select id="accountList" parameterType="com.pb.client.BankAccountDto" resultType="com.pb.client.BankAccountDto">
-  	  	select * from bank_account
+	<select id="accountList" resultType="com.pb.client.BankAccountDto">
+  	  	select * from bank_account where client_id=#{user_id}
+  	</select>
+	<select id="tradeLogList" parameterType="com.pb.client.TradeLogDto" resultType="com.pb.client.TradeLogDto">
+  	  	select * from trade_log
   	</select>
 </mapper>

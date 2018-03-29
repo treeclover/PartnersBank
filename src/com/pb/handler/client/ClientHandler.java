@@ -23,17 +23,37 @@ public class ClientHandler{
 	
 	
 	private ClientDto clientDto;
-	
 	private BankAccountDto bankAccountDto;
-	
 	private TradeLogDto tradeLogDto;
 	
 	
 	@RequestMapping("/inquireTotal")
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		List<BankAccountDto> accountList = clientDao.accountList(bankAccountDto);
+		System.out.println("ClientHandler inquireTotal");
+		String user_id = "test";
+
+		List<BankAccountDto> accountList = clientDao.accountList(user_id);
 		request.setAttribute("accountList", accountList);
 		return new ModelAndView("client/inquireTotal");
+	}
+
+	@RequestMapping("/inquireTransfer")
+	public ModelAndView inquireTransfer(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+		System.out.println("ClientHandler inquireTransfer");
+		String user_id = "test";
+
+		List<BankAccountDto> accountList = clientDao.accountList(user_id);
+		request.setAttribute("accountList", accountList);
+		
+		/*String user_id = "id";
+		BankAccountDto accountList = clientDao.accountList(user_id);
+		request.setAttribute("accountList", accountList);
+
+		
+		List<TradeLogDto> tradeLogList = clientDao.tradeLogList(tradeLogDto);
+		request.setAttribute("tradeLogList", tradeLogList);*/
+		
+		return new ModelAndView("client/inquireTransfer");
 	}
 
 	@RequestMapping("/deposit")

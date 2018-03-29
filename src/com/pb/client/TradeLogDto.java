@@ -3,7 +3,9 @@ package com.pb.client;
 public class TradeLogDto {
 	private int no;
 	private String account_number;
-	private String corporation_name;
+	private int corporation_no;
+	private String trade_account_number;
+	private String trade_content;
 	private int input_money;
 	private int output_money;
 	private int type;
@@ -21,11 +23,23 @@ public class TradeLogDto {
 	public void setAccount_number(String account_number) {
 		this.account_number = account_number;
 	}
-	public String getCorporation_name() {
-		return corporation_name;
+	public int getCorporation_no() {
+		return corporation_no;
 	}
-	public void setCorporation_name(String corporation_name) {
-		this.corporation_name = corporation_name;
+	public void setCorporation_no(int corporation_no) {
+		this.corporation_no = corporation_no;
+	}
+	public String getTrade_account_number() {
+		return trade_account_number;
+	}
+	public void setTrade_account_number(String trade_account_number) {
+		this.trade_account_number = trade_account_number;
+	}
+	public String getTrade_content() {
+		return trade_content;
+	}
+	public void setTrade_content(String trade_content) {
+		this.trade_content = trade_content;
 	}
 	public int getInput_money() {
 		return input_money;
@@ -51,5 +65,7 @@ public class TradeLogDto {
 	public void setNote(String note) {
 		this.note = note;
 	}
+	
+
 	
 }

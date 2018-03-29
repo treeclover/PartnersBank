@@ -6,6 +6,7 @@ public class BankAccountDto {
 	private String client_id;
 	private String type;
 	private int remain_money;
+	
 	public String getAccount_number() {
 		return account_number;
 	}
