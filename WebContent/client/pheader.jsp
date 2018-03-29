@@ -29,7 +29,7 @@
 <div class="wrapper row1">
   <header id="header" class="clear">
     <div id="hgroup">
-      <h1><a href="index.html">P<span>artners</span>B<span>ank</span></a></h1>
+      <h1><a href="${path}/index.jsp">P<span>artners</span>B<span>ank</span></a></h1>
     </div>
     <nav>
       <ul class="clear">

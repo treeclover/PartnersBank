@@ -23,8 +23,8 @@
       </fieldset>
     </form>
     <ul>
-      <li><a href="#">Sign Up</a></li>
-      <li><a href="#">Login</a></li>
+      <li><a href="signup.do">회원가입</a></li>
+      <li><a href="login.do">로그인</a></li>
       <li><a href="#">고객센터</a></li>
     </ul>
   </div>
@@ -33,7 +33,7 @@
 <div class="wrapper row1">
   <header id="header" class="clear">
     <div id="hgroup">
-      <h1><a href="index.html">P<span>artners</span>B<span>ank</span></a></h1>
+      <h1><a href="${path}/index.jsp">P<span>artners</span>B<span>ank</span></a></h1>
     </div>
     <nav>
       <ul class="clear">
