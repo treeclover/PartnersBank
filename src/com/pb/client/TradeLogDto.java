@@ -8,7 +8,10 @@ public class TradeLogDto {
 	private String trade_content;
 	private int input_money;
 	private int output_money;
+	private int remain_money;
 	private int type;
+	private String trade_time;
+	private String method;
 	private String note;
 	
 	public int getNo() {
@@ -53,11 +56,29 @@ public class TradeLogDto {
 	public void setOutput_money(int output_money) {
 		this.output_money = output_money;
 	}
+	public int getRemain_money() {
+		return remain_money;
+	}
+	public void setRemain_money(int remain_money) {
+		this.remain_money = remain_money;
+	}
 	public int getType() {
 		return type;
 	}
 	public void setType(int type) {
 		this.type = type;
+	}
+	public String getTrade_time() {
+		return trade_time;
+	}
+	public void setTrade_time(String trade_time) {
+		this.trade_time = trade_time;
+	}
+	public String getMethod() {
+		return method;
+	}
+	public void setMethod(String method) {
+		this.method = method;
 	}
 	public String getNote() {
 		return note;

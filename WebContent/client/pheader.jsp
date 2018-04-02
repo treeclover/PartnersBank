@@ -29,21 +29,21 @@
 <div class="wrapper row1">
   <header id="header" class="clear">
     <div id="hgroup">
-      <h1><a href="index.html">P<span>artners</span>B<span>ank</span></a></h1>
+      <h1><a href="${path}/">P<span>artners</span>B<span>ank</span></a></h1>
     </div>
     <nav>
       <ul class="clear">
-        <li><a href="#">조회</a><span>Test Text Here</span>
+        <li><a href="inquireTotal.do">조회</a><span>Test Text Here</span>
           <ul>
             <li><a href="#">my 금융</a></li>
-            <li><a href="#">전체계좌조희</a></li>
-            <li><a href="#">거래내역조회</a></li>
+            <li><a href="inquireTotal.do">전체계좌조희</a></li>
+            <li><a href="inquireTransfer.do">거래내역조회</a></li>
           </ul>
         </li>
         <li><a href="#">이체</a><span>Test Text Here</span>
           <ul>
-            <li><a href="#">통합이체</a></li>
-            <li><a href="#">다계좌 이체</a></li>
+            <li><a href="transferIntegration.do">통합이체</a></li>
+            <li><a href="transferSeveral.do">다계좌 이체</a></li>
           </ul>
         </li>
         <li><a href="#">뱅킹관리</a><span>Test Text Here</span></li>

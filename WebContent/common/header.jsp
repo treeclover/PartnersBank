@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="path" value="${pageContext.request.contextPath}" scope="application"/>
@@ -33,15 +34,14 @@
 <div class="wrapper row1">
   <header id="header" class="clear">
     <div id="hgroup">
-      <h1><a href="index.html">P<span>artners</span>B<span>ank</span></a></h1>
+      <h1><a href="${path}">P<span>artners</span>B<span>ank</span></a></h1>
     </div>
     <nav>
       <ul class="clear">
-        <li><a href="${path}/index.jsp">개인</a><span>Test Text Here</span>
+        <li><a href="#">개인</a><span>Test Text Here</span>
           <ul>
-            <li><a href="#">조회</a></li>
-            <li><a href="#">이체</a></li>
-            <li><a href="#">기업</a></li>
+            <li><a href="inquireTotal.do">조회</a></li>
+            <li><a href="transferIntegration.do">이체</a></li>
             <li><a href="#">뱅킹관리</a></li>
             <li><a href="#">금융상품</a></li>
           </ul>

@@ -6,7 +6,17 @@
 	<select id="accountList" resultType="com.pb.client.BankAccountDto">
   	  	select * from bank_account where client_id=#{user_id}
   	</select>
-	<select id="tradeLogList" parameterType="com.pb.client.TradeLogDto" resultType="com.pb.client.TradeLogDto">
-  	  	select * from trade_log
+	<select id="tradeLogList" parameterType="hashmap" resultType="com.pb.client.TradeLogDto">
+  	  	select * from trade_log where account_number =#{account_number} and trade_time between #{firstDate} and #{endDate}
+  	</select>
+	<select id="tradeLogListDeposit" parameterType="hashmap" resultType="com.pb.client.TradeLogDto">
+  	  	<![CDATA[
+  	  	select * from trade_log where account_number =#{account_number} and input_money <> 0 and trade_time between #{firstDate} and #{endDate}
+  	  	]]>
+  	</select>
+	<select id="tradeLogListWithdrawal" parameterType="hashmap" resultType="com.pb.client.TradeLogDto">
+		<![CDATA[
+  	  	select * from trade_log where account_number =#{account_number} and output_money <> 0 and trade_time between #{firstDate} and #{endDate}
+  	  	]]>
   	</select>
 </mapper>
