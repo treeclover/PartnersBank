@@ -6,6 +6,24 @@
 	<select id="accountList" resultType="com.pb.client.BankAccountDto">
   	  	select * from bank_account where client_id=#{user_id}
   	</select>
+	<select id="accountDetail" parameterType="String" resultType="com.pb.client.BankAccountDto">
+  	  	select * from bank_account where account_number=#{account_number}
+  	</select>
+	<select id="otherBankAccountDetail" parameterType="String" resultType="com.pb.client.BankAccountDto">
+  	  	select * from other_bank_account where account_number=#{account_number}
+  	</select>
+	<select id="checkAccount" parameterType="String" resultType="int">
+  	  	select count(*) from bank_account where account_number=#{account_number}
+  	</select>
+	<select id="checkOtherAccount" parameterType="String" resultType="int">
+  	  	select count(*) from other_bank_account where account_number=#{account_number}
+  	</select>
+	<update id="updateIncorrectCount">
+		update bank_account set incorrect_count=incorrect_count+1 where account_number=#{account_number}
+	</update>
+	<update id="updateIncorrectCountReset">
+		update bank_account set incorrect_count=0 where account_number=#{account_number}
+	</update>
 	<select id="tradeLogList" parameterType="hashmap" resultType="com.pb.client.TradeLogDto">
   	  	select * from trade_log where account_number =#{account_number} and trade_time between #{firstDate} and #{endDate}
   	</select>

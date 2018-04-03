@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.pb.client.BankAccountDto;
 import com.pb.client.ClientDao;
 import com.pb.client.ClientDto;
+import com.pb.client.OtherBankAccountDto;
 import com.pb.client.TradeLogDto;
 
 @Controller
@@ -83,20 +84,59 @@ public class ClientHandler{
 		return new ModelAndView("client/transferIntegration");
 	}
 
+	
 	@RequestMapping("/transferIntegrationResult")
 	public ModelAndView transferIntegrationResult(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		System.out.println("ClientHandler inquireTransferResult");
 		String user_id = "test";
+
+/*		List<HashMap<String,Object>> list = new ArrayList<HashMap<String,Object>>();*/
 		
 		String account_number = request.getParameter("account_number");
-		String otherBank = request.getParameter("otherBank");
-		String otherBankAccountNumber = request.getParameter("otherBankAccountNumber");
-		String money = request.getParameter("money");
+		String bankName = request.getParameter("bankName");
+		String BankAccountNumber = request.getParameter("BankAccountNumber"); // 보낼 계좌 번호
+		String money = request.getParameter("money"); 
 		String pwd = request.getParameter("pwd");
 		String outPutMoneyMemo = request.getParameter("outPutMoneyMemo");
 		String inPutMoneyMemo = request.getParameter("inPutMoneyMemo");
 		String name = request.getParameter("name");
 
+		int check = clientDao.check(account_number, pwd);
+		int otherAccountCheck = 0;
+		
+		/* 확인해야 할 것!
+		 *  1. 계좌번호가 존재하는 것인지, 
+		 *  2. 예금주 명이 같은지 
+		 * */
+		if(bankName.equals("PartnersBank")) {//partnersBank 은행으로 이체
+			otherAccountCheck = clientDao.check(BankAccountNumber, pwd);  //0 이 나오면 계좌가 없는거
+			
+			if(otherAccountCheck != 0) {
+				BankAccountDto accountDetail =clientDao.accountDetail(BankAccountNumber);
+				request.setAttribute("accountDetail", accountDetail);
+			}
+			
+		}else {//타 은행으로 이체
+			
+			otherAccountCheck = clientDao.checkOtherBank(BankAccountNumber); //0이 나오면 계좌가 없는거
+			
+			if(otherAccountCheck != 0) {
+				OtherBankAccountDto otherAccountDetail = clientDao.otherBankAccountDetail(BankAccountNumber);
+				request.setAttribute("otherAccountDetail", otherAccountDetail);
+			}
+		}
+		
+		request.setAttribute("check", check);
+		
+		
+		request.setAttribute("account_number", account_number);
+		request.setAttribute("bankName", bankName);
+		request.setAttribute("BankAccountNumber", BankAccountNumber);
+		request.setAttribute("money", money);
+		request.setAttribute("outPutMoneyMemo", outPutMoneyMemo);
+		request.setAttribute("inPutMoneyMemo", inPutMoneyMemo);
+		request.setAttribute("name", name);
+		
 		
 		return new ModelAndView("client/transferIntegrationResult");
 	}
