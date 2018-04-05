@@ -22,5 +22,6 @@
 		<mapper resource="com/pb/client/client.xml"/>
 		<mapper resource="com/pb/chatbot/chatbot.xml"/>
 		<mapper resource="com/pb/recommand/recommand.xml"/>
+		<mapper resource="com/pb/client/account.xml"/>
 	</mappers>
 </configuration>

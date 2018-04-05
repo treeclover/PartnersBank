@@ -23,8 +23,16 @@
       </fieldset>
     </form>
     <ul>
-      <li><a href="signup.do">회원가입</a></li>
-      <li><a href="login.do">로그인</a></li>
+    	<c:choose>
+    		<c:when test="${sessionScope.userId != null || sessionScope.userName != null}">
+    			<li>${sessionScope.userName}님, 반갑습니다.</li>
+    			<li><a href="signout.do">로그아웃</a></li>
+    		</c:when>
+    		<c:otherwise>
+    			<li><a href="signup.do">회원가입</a></li>
+    			<li><a href="signin.do">로그인</a></li>
+    		</c:otherwise>
+    	</c:choose>
       <li><a href="#">고객센터</a></li>
     </ul>
   </div>

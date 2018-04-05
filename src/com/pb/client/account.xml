@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Account">
+	<insert id="insertAccount" parameterType="com.pb.client.ClientDto">
+		insert into client values("U", #{id}, #{pw}, #{name}, #{addr}, #{phone}, #{email}, #{job}, #{gender}, #{addr_detail})
+	</insert>
+	<select id="selectById" parameterType="com.pb.client.ClientDto" resultType="com.pb.client.ClientDto">
+		select * from client where id = #{id}
+	</select>
+</mapper>
