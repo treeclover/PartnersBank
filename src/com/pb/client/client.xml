@@ -9,7 +9,7 @@
 	<select id="accountDetail" parameterType="String" resultType="com.pb.client.BankAccountDto">
   	  	select * from bank_account where account_number=#{account_number}
   	</select>
-	<select id="otherBankAccountDetail" parameterType="String" resultType="com.pb.client.BankAccountDto">
+	<select id="otherBankAccountDetail" parameterType="String" resultType="com.pb.client.OtherBankAccountDto">
   	  	select * from other_bank_account where account_number=#{account_number}
   	</select>
 	<select id="checkAccount" parameterType="String" resultType="int">
@@ -17,6 +17,9 @@
   	</select>
 	<select id="checkOtherAccount" parameterType="String" resultType="int">
   	  	select count(*) from other_bank_account where account_number=#{account_number}
+  	</select>
+	<select id="checkBank" parameterType="String" resultType="int">
+  	  	select count(*) from bank_account where account_number=#{account_number}
   	</select>
 	<update id="updateIncorrectCount">
 		update bank_account set incorrect_count=incorrect_count+1 where account_number=#{account_number}

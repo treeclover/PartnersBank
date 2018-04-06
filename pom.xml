@@ -169,6 +169,24 @@
 	    <artifactId>mysql-connector-java</artifactId>
 	    <version>5.1.38</version>
 	  </dependency>
-      
+	  
+	 <dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-mapper-asl</artifactId>
+		<version>1.9.13</version>
+	  </dependency> 
+	  
+	  <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-core</artifactId>
+          <version>2.5.4</version>
+      </dependency>
+
+	  <dependency>
+	  	<groupId>org.codehaus.jackson</groupId>
+	  	<artifactId>jackson-core-asl</artifactId>
+	  	<version>1.9.13</version>
+	  </dependency>
    </dependencies>
+   
 </project>

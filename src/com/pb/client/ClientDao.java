@@ -11,4 +11,5 @@ public interface ClientDao {
 	public BankAccountDto accountDetail(String account_number);
 	public int checkOtherBank(String account_number);
 	public OtherBankAccountDto otherBankAccountDetail(String account_number);
+	public int checkBank(String account_number);
 }

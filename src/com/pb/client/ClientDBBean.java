@@ -57,6 +57,21 @@ public class ClientDBBean implements ClientDao{
 	}
 
 	@Override
+	public int checkBank(String account_number) {
+		int result = SqlMapClient.getSession().selectOne("Personal.checkBank",account_number);
+		
+		if( result != 0) {
+			//계좌가 있다.
+			result = 1;
+		}else {
+			//계좌가 없다.
+			result = 0;
+		}
+		
+		return result;
+	}
+
+	@Override
 	public int checkOtherBank(String account_number) {
 		int result = SqlMapClient.getSession().selectOne("Personal.checkOtherAccount",account_number);
 		

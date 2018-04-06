@@ -11,100 +11,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<%-- <script src="${path}/layout/scripts/jquery.min.js"></script> --%>
 <script type="text/javascript">
 	$(document).ready(function(){
-
-	
-	$('#resultTransfer').css('display',"none");
-	
-
-	$('#resultTable tr>td:last>input[id="deleteBtn"]').on('click',function(){
-		$(this).parent().parent().remove();
-	});
-	
-		
-	$('#addBtn').click(function(){
-		$('#BankAccountNumber').val("");
-		$('#money').val("");
-		$('#pwd').val("");
-		
-		$('#account_number').focus();
-		$('#insertForm').css('display',"");
-	});	
 		
 		
-	$('#inputBtn').click(function(){
-			 var formContent = $('form').serialize();
-			
-			 $.ajax({
-				contentType: "application/text; charset=UTF-8", 
-				url : 'transferIntegrationResult.do',
-				type : 'get',
-				dataType : 'text', 
-	            data : $('form').serialize(), 
-				success : function(data){
-					console.log('sucess :' +data);
-					
-					if(data == "notMatch"){
-						alert("출금계좌와 입금계좌가 같습니다.");
-						location = "transferIntegration.do";
-					}else if(data == "notAccount"){
-						alert("계좌번호를 확인해 주세요");
-						location = "transferIntegration.do";
-					}else if(data == "checkPwd"){
-						alert("비밀번호가 다릅니다. "+'/n'+"5회 이상 틀릴시 해당 계좌 거래가 중단됩니다.");
-						location = "transferIntegration.do";
-					}else if(data == "checkMoney"){
-						alert("잔액이 부족합니다.");
-						location = "transferIntegration.do";
-					}else {
-						$('#insertForm').css('display',"none");
-						$('#resultTransfer').css('display',"");
-						var str = '<tr class="trClass">';
-						str +='<td>'+$('[name="account_number"]').val()+'</td><td>'+$('[name="bankName"]').val()+'</td><td>'+data+'<br>'+$('[name="name"]').val()+'</td><td>'+$('[name="money"]').val()+'</td><td>'+$('[name="outPutMoneyMemo"]').val()+'</td><td>'+$('[name="inPutMoneyMemo"]').val()+'</td>';
-						str +='<td><input type="button" value="취소" id="deleteBtn"></td>'
-						str += '</tr>';
-						$('#resultTable').append(str);
-						
-						
-						
-						/* 합계 table 만들기 */
-
-						var trCount = Number($("#resultTable tr").length-1);
-						console.log('trCount : '+trCount);
-						
-						var tr = $('.trClass');
-						var td = tr.children();	
-						var tdSum = 0;
-						
-						
-						console.log('테이블의 모든 데이터 tr.text() : '+tr.text());
-						
-						for(var i=3 ; i <= td.length ; i+6){
-							console.log('i+6 : ' +i+6);
-							tdSum += Number(td.eq(i).text());
-							console.log('tdSum'+tdSum);
-						}
-						
-						var sumvar = '<tr><td width="15%">'+'총 건수'+'</td><td>'+trCount+'건'+'</td><td width="20%">'+'총 이체 금액'+'</td><td>'+tdSum+'원'+'</td></tr>';
-						console.log('sumvar : '+sumvar);
-						$('#resultTableSum').html(sumvar);
-					}
-					
-					
-					
-				},
-				error : function(request,status,error){
-                    alert("code : "+"\n"+request.status+"\n"+"message: "+"\n"+request.responseText+"\n"+" error : "+"\n"+error);
-                 }
-			}); 
-			 
-			 
-			 
-		}); 
-		
-	});
+	})
 	
 	function MoneyBtn(name){
 		transferIntegrationForm.money.value = name;
@@ -156,29 +67,18 @@
 				box.value = eval(box.value);
 				++cnt;
 		}
-	
+
 </script>
-<jsp:include page="pheader.jsp"></jsp:include>
 </head>
 <body>
-<div class="wrapper row3">
-  	<div id="container" class="clear"> 
-   	 	<div id="content"> 
-   			
 
-  		
-  		
-  		
-  		<h1>통합이체</h1>
-  		
-  		<div id="insertForm">
-		  		
+<h1>통합이체</h1>
 		<form action="transferIntegrationResult.do" name="transferIntegrationForm" method="post">
 	        <table border="1">
 	            <tr>
 	              <th>출금계좌번호</th>
 	              <td>
-	             	<select name="account_number" id="account_number" style="width: 300px;" onchange="document.getElementById('remain_money').innerHTML = '' ">
+	             	<select name="account_number" style="width: 300px;" onchange="document.getElementById('remain_money').innerHTML = '' ">
 						<c:forEach items="${requestScope.accountList}" var="account" varStatus="state">
 							<option value="${account.account_number}">${account.account_number} : ${account.account_name} </option>
 						</c:forEach>
@@ -222,13 +122,13 @@
 	            <tr>
 	              <th>입금계좌번호</th>
 		              <td>
-			              <input type="text" name='BankAccountNumber' id='BankAccountNumber'/>
+			              <input type="text" name='BankAccountNumber' />
 			          </td>
 	            </tr>
 				<tr>
 				  <th>이체금액</th>
 				  <td>
-					 <input type="text" name='money' id='money' /> 원  
+					 <input type="text" name='money' /> 원  
 					 <input type='button' name='1000000' onclick='MoneyBtn(this.name)' value="100만"/>
 					 <input type='button' name='500000' onclick='MoneyBtn(this.name)' value="50만"/>
 					 <input type='button' name='100000' onclick='MoneyBtn(this.name)' value="10만"/>
@@ -243,7 +143,7 @@
 	            <tr>
 	              <th>계좌비밀번호</th>
 	              <td>
-	              	<input type="password" name='pwd' id='pwd' />
+	              	<input type="password" name='pwd' />
 	              </td>
 	            </tr>
 	        </table><br/>
@@ -278,10 +178,9 @@
 							<input type="hidden"  value="${account.day_transfer_limit_remain}" name="dayLimitRemain" /> 
 							<input type="hidden"  value="${account.password}" name="password" /> 
 						</c:forEach> 
-	        <div style="align-items: center;"><input type='button' id="inputBtn" value="확인" /></div>
+	        <div style="align-items: center;"><input type='submit' name='inputBtn' id="inputBtn" value="확인" /></div>
 		</form>
 
-</div>
 
 
 <!-- modal 이체한도 -->  
@@ -358,54 +257,7 @@
 	</form>      </div>
     </div>
   </div>
-  		
-  		<div id="resultTransfer">
-  		<div style="padding: 10px; align: center;">
-			<input type="button" id="addBtn" value="추가이체" ><br/>
-		</div>
-
-		<form>
-  		<table id="resultTable" border="1">
-  		<tr>
-  			<td>출금계좌</td><td>입금은행<br>입금계좌</td><td>내용</td><td>이체금액(원)</td><td>받는통장 메모</td><td>내 통장 메모</td><td>취소</td>
-  		</tr>
-  		</table>
-  		
-  		<table id="resultTableSum" border="1">
-  		</table>
-  		
-  		<span style="color: red; font-size: 9px;"> *고객님이 입력하신 이체정보입니다. 최종거래 전에 입금은행 계좌번호와 이체금액, 받는 분 성함을 다시 한번 확인 후 이체하여 주시기 바랍니다. </span>
-  		<input type="button" value="취소" onclick="location='transferIntegration.do'"/>
-  		<input type="submit" value="다음">
-  		</form>
-
-
-  		<div style="height: 250px; border: 1px solid #5d5d5d; margin-top: 50px;">
-			<div style="font-weight: bold; font-size: 15px; align-content: center; text-align : center; ">알아두세요.</div> 
-			<hr>
-			<ul>
-				<li>친구,지인 및 거래처에서 인터넷메신저 또는 휴대전화 문자메시지를 통해 송금을 요구받은 경우에는 반드시 이체 전 전화로 사실관계여부를 확인하시기 바랍니다.</li>
-				<li>안전한 전자금융거래를 위하여 각족 비밀번호,보안카드번호 등 금융거래 관련 개인정보가 유출되지 않도록 유의하여 주시기 바랍니다.</li>
-				<li>이체진행 중 에러가 발생하거나, 정상적으로 처리가 완료되지 않은 경우, 반드시 이체조회결과에서 거래내역을 조회한 후 다시 이체거래를 진행해주시기 바랍니다.</li>
-				<li>'내통장 메모'는 고객님의 통장에 인자하여 드리는 적요 메세지입니다.</li>
-			</ul>			
-
-		</div>
-  		
-  		
-  		</div>
-  		
-  		
-  		
-  		
-  		
-  		
-  		
-  		
-  		
-		</div> 
-	</div>
-</div>
+  
+  
 </body>
-<jsp:include page="../common/footer.jsp"></jsp:include>
 </html>
