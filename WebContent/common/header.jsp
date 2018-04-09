@@ -24,8 +24,8 @@
       </fieldset>
     </form>
     <ul>
-      <li><a href="#">Sign Up</a></li>
-      <li><a href="#">Login</a></li>
+      <li><a href="signup.do">회원가입</a></li>
+      <li><a href="login.do">로그인</a></li>
       <li><a href="#">고객센터</a></li>
     </ul>
   </div>
