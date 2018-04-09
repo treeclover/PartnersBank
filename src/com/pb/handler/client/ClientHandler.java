@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,7 +36,10 @@ public class ClientHandler{
 	@RequestMapping("/inquireTotal")
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		System.out.println("ClientHandler inquireTotal");
-		String user_id = "test";
+		HttpSession httpSession = request.getSession();
+		String user_id = (String) httpSession.getAttribute("userId");
+
+		System.out.println(user_id);
 
 		List<BankAccountDto> accountList = clientDao.accountList(user_id);
 		request.setAttribute("accountList", accountList);
@@ -46,7 +50,10 @@ public class ClientHandler{
 	@RequestMapping("/inquireTransfer")
 	public ModelAndView inquireTransfer(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		System.out.println("ClientHandler inquireTransfer");
-		String user_id = "test";
+		HttpSession httpSession = request.getSession();
+		String user_id = (String) httpSession.getAttribute("userId");
+
+		System.out.println(user_id);
 
 		List<BankAccountDto> accountList = clientDao.accountList(user_id);
 		request.setAttribute("accountList", accountList);
@@ -80,7 +87,10 @@ public class ClientHandler{
 	@RequestMapping("/transferIntegration")
 	public ModelAndView transferIntegration(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		System.out.println("ClientHandler inquireTransfer");
-		String user_id = "test";
+		HttpSession httpSession = request.getSession();
+		String user_id = (String) httpSession.getAttribute("userId");
+
+		System.out.println(user_id);
 
 		List<BankAccountDto> accountList = clientDao.accountList(user_id);
 		request.setAttribute("accountList", accountList);
@@ -162,7 +172,6 @@ public class ClientHandler{
 	@ResponseBody
 	public String transferIntegrationResult(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		System.out.println("ClientHandler inquireTransferResult");
-		String user_id = "test";
 		String result = "";
 		
 		

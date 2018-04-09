@@ -14,6 +14,10 @@ public class ClientDto {
 	
 	public ClientDto() { }	
 	
+	public ClientDto(String id) {
+	      this.id = id;
+	   }
+	
 	public ClientDto(String id, String pw) {
 		super();
 		this.id = id;

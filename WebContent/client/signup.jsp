@@ -8,6 +8,15 @@
 		location.href="main.do";
 	}
 	
+	function checkIdDup() {
+		if(id.value == "") {
+			alert("아이디를 입력하셔야 합니다.");
+		} else {
+			var url = "checkIdDup.do?id=" + id.value;
+			var checkId = window.open(url, "", "left=650, top=340, width=500, height=261, scrollbars=0, resizable=0, status=0");	
+		}
+	}
+	
 	function jobCheckbox(check) {
 		var cbox = document.getElementsByName("job");
 		for(var i = 0; i < cbox.length; i++) {
@@ -71,7 +80,10 @@
 	
 	function checkValue() {
 		var name = document.getElementById("name");
-		if(id.value == "" || id.value == undefined) {
+		if(idDup.value == "false") {
+			alert('아이디 중복확인을 하셔야 합니다.');
+			return false;
+		} else if(id.value == "" || id.value == undefined) {
 			alert('아이디를 입력하셔야 합니다.');
 			return false;
 		} else if(password.value == "" || id.value == undefined) {
@@ -133,7 +145,7 @@
 	}
 	
 	function searchAddr(){
-		var pop = window.open("searchAddr.do","pop","width=570,height=420, scrollbars=yes, resizable=yes");
+		var pop = window.open("searchAddr.do","pop","left=650, top=340, width=570,height=420, scrollbars=yes, resizable=yes");
 	}
 
 
@@ -171,10 +183,14 @@
 			<p>모든 정보를 기입하셔야 합니다.</p>
 			<hr align="left"/>
 			<form id="signForm" action="signup.do" method="post" onsubmit="return checkValue()">
+				<input type="hidden" id="idDup" value="false"/>
 				<table>
 					<tr>
 						<th>아이디</th>
-						<td><input type="text" id="id" name="id" maxlength="15" onkeyup="javascript:goToPw()"/></td>
+						<td>
+							<input type="text" id="id" name="id" maxlength="15" onkeyup="javascript:goToPw()"/>
+							<input type="button" value="중복체크" onclick="checkIdDup()"/>
+						</td>
 					</tr>
 					<tr>
 						<th>비밀번호</th>

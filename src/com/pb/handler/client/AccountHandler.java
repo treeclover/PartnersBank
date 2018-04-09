@@ -16,7 +16,7 @@ import com.pb.client.ClientDto;
 @Controller
 public class AccountHandler {
 	@Resource
-	AccountDao accountDao;	
+	AccountDao accountDao;
 
 	@RequestMapping(value="signup", method=RequestMethod.GET)
 	public ModelAndView signupForm(HttpServletRequest request, HttpServletResponse response) throws Throwable {
@@ -82,6 +82,22 @@ public class AccountHandler {
 		}
 		
 		return new ModelAndView("index");
+	}
+	
+	@RequestMapping(value="checkIdDup")
+	public ModelAndView checkIdDup(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+		String id = request.getParameter("id");
+		
+		ClientDto client = new ClientDto(id);
+		ClientDto result = accountDao.findById(client);
+		
+		if(result == null) {
+			request.setAttribute("result", true);
+		} else {
+			request.setAttribute("result", false);
+		}
+		
+		return new ModelAndView("client/checkIdDup");
 	}
 	
 	@RequestMapping(value="signout")
