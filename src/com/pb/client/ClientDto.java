@@ -6,11 +6,53 @@ public class ClientDto {
 	private String pw;
 	private String name;
 	private String addr;
+	private String addr_detail;
 	private String phone;
 	private String email;
 	private String job;
 	private String gender;
 	
+	public ClientDto() { }	
+	
+	public ClientDto(String id, String pw) {
+		super();
+		this.id = id;
+		this.pw = pw;
+	}
+
+	public ClientDto(String type, String id, String pw, String name, String addr, String addr_detail,
+			String phone, String email, String job, String gender) {
+		super();
+		this.type = type;
+		this.id = id;
+		this.pw = pw;
+		this.name = name;
+		this.addr = addr;
+		this.addr_detail = addr_detail;
+		this.phone = phone;
+		this.email = email;
+		this.job = job;
+		this.gender = gender;
+	}
+	public ClientDto(String id, String pw, String name, String addr, String addr_detail, String phone,
+			String email, String job, String gender) {
+		super();
+		this.id = id;
+		this.pw = pw;
+		this.name = name;
+		this.addr = addr;
+		this.addr_detail = addr_detail;
+		this.phone = phone;
+		this.email = email;
+		this.job = job;
+		this.gender = gender;
+	}
+	public String getAddr_detail() {
+		return addr_detail;
+	}
+	public void setAddr_detail(String addr_detail) {
+		this.addr_detail = addr_detail;
+	}
 	public String getJob() {
 		return job;
 	}

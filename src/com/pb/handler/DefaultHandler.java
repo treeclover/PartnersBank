@@ -18,5 +18,10 @@ public class DefaultHandler implements CommandHandler {
 		request.setAttribute( "result", "처리할 수 없는 요청입니다" );
 		return new ModelAndView("default");
 	}
+	
+	@RequestMapping("main")
+	public ModelAndView moveMain(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+		return new ModelAndView("index");
+	}
 
 }

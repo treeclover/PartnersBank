@@ -1,6 +1,5 @@
 package com.pb.handler.client;
 
-import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 
